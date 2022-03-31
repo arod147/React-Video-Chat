@@ -1,15 +1,15 @@
-import React, { useContext, useState } from "react";
+import React, { useState, useContext } from "react";
 import {
   Button,
-  Grid,
   TextField,
+  Grid,
   Typography,
   Container,
   Paper,
 } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { Assignment, Phone, PhoneDisabled } from "@material-ui/icons";
+import { makeStyles } from "@material-ui/core/styles";
 
 import { SocketContext } from "../SocketContext";
 
@@ -43,15 +43,16 @@ const useStyles = makeStyles((theme) => ({
     border: "2px solid black",
   },
 }));
-const Options = ({ childern: children }) => {
+
+const Options = ({ children }) => {
   const { me, callAccepted, name, setName, callEnded, leaveCall, callUser } =
     useContext(SocketContext);
   const [idToCall, setIdToCall] = useState("");
-
   const classes = useStyles();
+
   return (
     <Container className={classes.container}>
-      <Paper elevation={10} classNam={classes.paper}>
+      <Paper elevation={10} className={classes.paper}>
         <form className={classes.root} noValidate autoComplete="off">
           <Grid container className={classes.gridContainer}>
             <Grid item xs={12} md={6} className={classes.padding}>
@@ -71,7 +72,7 @@ const Options = ({ childern: children }) => {
                   fullWidth
                   startIcon={<Assignment fontSize="large" />}
                 >
-                  Copy your iD
+                  Copy Your ID
                 </Button>
               </CopyToClipboard>
             </Grid>
@@ -80,7 +81,7 @@ const Options = ({ childern: children }) => {
                 Make a call
               </Typography>
               <TextField
-                label="ID to Call"
+                label="ID to call"
                 value={idToCall}
                 onChange={(e) => setIdToCall(e.target.value)}
                 fullWidth
