@@ -30,8 +30,8 @@ const VideoPlayer = () => {
 
   const classes = useStyles();
   return (
-    //Our video
     <Grid container className={classes.gridContainer}>
+      {/* // Our video */}
       {stream && (
         <Paper className={classes.paper}>
           <Grid xs={12} md={6}>
@@ -46,7 +46,7 @@ const VideoPlayer = () => {
           </Grid>
         </Paper>
       )}
-      // Users Video
+      {/* // Users Video */}
       {callAccepted && !callEnded && (
         <Paper className={classes.paper}>
           <Grid xs={12} md={6}>
